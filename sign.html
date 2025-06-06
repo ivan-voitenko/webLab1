@@ -2,103 +2,149 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Book</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="task1.jpg" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Book</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="task1.jpg" type="image/x-icon" />
 </head>
 
 <body>
-    <div class="body">
-        <header>
-            <nav class="navbar navbar-dark fixed-top navbar-expand-sm bg-black bg-opacity-75">
-                <div class="container-fluid">
-                    <img src="task1.jpg" class="d-block mx-lg-auto img-fluid" alt="logo" width="50" height="50"
-                        loading="lazy">
-                    <a class="navbar-brand fs-3" href="index.html">Contact Book</a>
+  <div class="body">
+    <header>
+      <nav class="navbar navbar-dark fixed-top navbar-expand-sm bg-black bg-opacity-75">
+        <div class="container-fluid">
+          <img src="task1.jpg" class="d-block mx-lg-auto img-fluid" alt="logo" width="50" height="50"
+            loading="lazy" />
+          <a class="navbar-brand fs-3" href="index.html">Contact Book</a>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
-                        aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"><i></i></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarID">
-                        <div class="navbar-nav ms-auto gap-2">
-                            <a href="create.html" class="purplebtn btn" role="button"
-                                data-bs-toggle="button">Create Contact</a>
-                            <a href="profile.html" class="purplebtn btn" role="button"
-                                data-bs-toggle="button">Profile</a>
-                            <a href="registr.html" class="purplebtn btn" role="button"
-                                data-bs-toggle="button">Registration</a>
-                            <a href="sign.html" class="btn btn-outline-light" role="button"
-
-                                data-bs-toggle="button">Sign In</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <div class="content">
-
-            <div class="signin">
-                <div class="container  border border-dark  rounded-2 mb-0  bg-dark text-light bg-opacity-50  ">
-                    <h1 class=" text-center text-light ">Log in to your account!</h1>
-                    <div class=" form-container">
-                        <form id="signinForm" method="POST" action="#">
-                            <div class="mb-3">
-                                <label for="number" class="form-label ">Number</label>
-                                <input type="text" class="form-control bg-dark border-dark text-light" id="number"
-                                    name="number" required>
-                            </div>
- <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control bg-dark border-dark text-light" id="email"
-                                    name="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label ">Password</label>
-                                <input type="password" class="form-control bg-dark border-dark text-light" id="password"
-                                    name="password" required>
-                            </div>
-                            <div class="button1">
-                                <button type="button" class="purplebtn btn btn-secondary text-dark mb-2">Enter</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+            aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarID">
+            <div class="navbar-nav ms-auto gap-2">
+              <a href="create.html" class="purplebtn btn" role="button" data-bs-toggle="button">Create Contact</a>
+              <a href="profile.html" class="purplebtn btn" role="button" data-bs-toggle="button">Profile</a>
+              <a href="registr.html" class="purplebtn btn" role="button" data-bs-toggle="button">Registration</a>
+              <a href="sign.html" class="btn btn-outline-light" role="button" data-bs-toggle="button">Sign In</a>
             </div>
+          </div>
         </div>
-        <footer class="footer">
-            <nav class="navbar  navbar-expand-sm navbar-dark bg-dark  ">
-                <div class="container-fluid">
-                    <a class="navbar-brand disabled" tabindex="-1" aria-disabled="true">Made by KV-21 Ivan Voitenko</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" aria-current="page" href="https://t.me/ivanvt92"
-                                    target="_blank">Telegram</a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </footer>
+      </nav>
+    </header>
 
+    <div class="content mt-5 pt-5">
+      <div class="signin">
+        <div
+          class="container border border-dark rounded-2 mb-0 bg-dark text-light bg-opacity-50 mt-5 pt-4 pb-4 px-4">
+          <h1 class="text-center text-light">Log in to your account!</h1>
+          <div class="form-container">
+            <form id="signinForm" method="POST" action="#">
+              <div class="mb-3">
+                <label for="number" class="form-label">Number</label>
+                <input type="text" class="form-control bg-dark border-dark text-light" id="number" name="number"
+                  required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control bg-dark border-dark text-light" id="email" name="email"
+                  required />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control bg-dark border-dark text-light" id="password"
+                  name="password" required />
+              </div>
+              <div class="button1">
+                <button type="button" class="purplebtn btn btn-secondary text-dark mb-2">Enter</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vue App for API Demo -->
+      <div id="app" class="container mt-5">
+        <h2 class="text-light mb-3">Користувачі з JSONPlaceholder</h2>
+        <div v-if="loading" class="text-light">Завантаження...</div>
+        <div v-if="error" class="alert alert-danger">{{ error }}</div>
+        <ul v-if="users.length" class="list-group bg-dark">
+          <li v-for="user in users" :key="user.id" class="list-group-item bg-secondary text-light">
+            {{ user.name }} – {{ user.email }}
+          </li>
+        </ul>
+      </div>
     </div>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-	<script src="sign.js"></script>
+
+    <footer class="footer mt-5">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand disabled" tabindex="-1" aria-disabled="true">Made by KV-21 Ivan Voitenko</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="https://t.me/ivanvt92" target="_blank">Telegram</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </footer>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+
+  <!-- Vue 3 + Axios -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <!-- Vue Init -->
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          users: [],
+          loading: false,
+          error: null
+        };
+      },
+      mounted() {
+        this.fetchUsers();
+      },
+      methods: {
+        fetchUsers() {
+          this.loading = true;
+          axios.get('https://jsonplaceholder.typicode.com/users')
+            .then(response => {
+              this.users = response.data;
+            })
+            .catch(error => {
+              this.error = 'Помилка при отриманні даних';
+              console.error(error);
+            })
+            .finally(() => {
+              this.loading = false;
+            });
+        }
+      }
+    }).mount('#app');
+  </script>
+
+  <script src="sign.js"></script>
 </body>
 
 </html>

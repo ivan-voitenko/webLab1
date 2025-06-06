@@ -2,128 +2,224 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Book</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="task1.jpg" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Book</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="task1.jpg" type="image/x-icon" />
+
+  <!-- Підключаємо Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- Підключаємо Axios CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
-    <div class="body">
-        <header>
-            <nav class="navbar navbar-dark fixed-top navbar-expand-sm bg-black bg-opacity-75">
-                <div class="container-fluid">
-                    <img src="task1.jpg" class="d-block mx-lg-auto img-fluid" alt="logo" width="50" height="50"
-                        loading="lazy">
-                    <a class="navbar-brand fs-3" href="index.html"> Contact Book</a>
+  <!-- ОБГОРТКА Vue-додатку -->
+  <div id="app" class="body">
+    <header>
+      <nav
+        class="navbar navbar-dark fixed-top navbar-expand-sm bg-black bg-opacity-75"
+      >
+        <div class="container-fluid">
+          <img
+            src="task1.jpg"
+            class="d-block mx-lg-auto img-fluid"
+            alt="logo"
+            width="50"
+            height="50"
+            loading="lazy"
+          />
+          <a class="navbar-brand fs-3" href="index.html">Contact Book</a>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
-                        aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"><i></i></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarID">
-                        <div class="navbar-nav ms-auto gap-2">
-                            <a href="create.html" class="purplebtn btn" role="button"
-                                data-bs-toggle="button">Create Contact</a>
-                            <a href="profile.html" class="purplebtn btn" role="button"
-                                data-bs-toggle="button">Profile</a>
-                            <a href="registr.html" class="purplebtn btn" role="button"
-                                data-bs-toggle="button">Registration</a>
-                            <a href="sign.html" class="btn btn-outline-light" role="button"
-                                data-bs-toggle="button">Sign In</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <div class="content">
-            <div class="info1 px-4 py-5  text-center bg-secondary bg-opacity-50 ">
-                <img class=" d-block mx-auto mb-4" src="task2.png" alt="" width="150" height="150">
-                <h1 class="display-5 fw-bold text-body-emphasis">Welcome to your personal contact book</h1>
-                <p class="lead mb-4 fs-4 fw-semibold">Make your contacts orginazed with Contact Book</p>
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <a type="link" href="create.html" class="butt btn btn-dark  btn-lg px-4 gap-3">Let's Start!</a>
-                    <a type="link" href="registr.html" class="btn btn-outline-light btn-lg px-4">Create Account!</a>
-                </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarID"
+            aria-controls="navbarID"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"><i></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarID">
+            <div class="navbar-nav ms-auto gap-2">
+              <a href="create.html" class="purplebtn btn" role="button"
+                >Create Contact</a
+              >
+              <a href="profile.html" class="purplebtn btn" role="button"
+                >Profile</a
+              >
+              <a href="registr.html" class="purplebtn btn" role="button"
+                >Registration</a
+              >
+              <a href="sign.html" class="btn btn-outline-light" role="button"
+                >Sign In</a
+              >
             </div>
-
-            
-
-            <div class="px-4 py-5   text-center bg-secondary bg-opacity-50  ">
-                <div class="row flex-lg-row-reverse align-items-center g-5 px-5  ">
-                    <div class="center">
-                        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">You can easily manage your contacts!</h1>
-                        <p class="lead p fs-4 fw-semibold">Add, edit and sort your contacts with Contact Book!</p>
- <div class="center">
-                        <img src="task3.png" class="d-block mx-lg-auto img-fluid " alt="Bootstrap Themes"
-                            width="200" height="200" loading="lazy">
-                    </div>
-                    </div>
-                </div>
-            </div>
-          
-
-
-            <div class="px-4 py-5   text-center bg-secondary bg-opacity-50  ">
-                <div class="row flex-lg-row-reverse align-items-center g-5 py-0  ">
-                    
-                    <div class="center">
-                        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Sort contacts by first letter!</h1>
-                        <p class="lead p fs-4 fw-semibold">Orginize by sorting with first letter of last name! It will be so easy to search!</p>
-
-                    </div>
-                </div>
-            </div>
-
-            
-
-            <div class="px-4 py-5   text-center bg-secondary bg-opacity-50  ">
-                <div class="row flex-lg-row-reverse align-items-center g-5 py-0  ">
- <div class="center">
-                        <img src="task4.png" class="d-block mx-lg-auto img-fluid " alt="Bootstrap Themes"
-                            width="200" height="200" loading="lazy">
-                    </div>
-                    <div class="center">
-                        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Flexibility and ease of use!
-                        </h1>
-                        <p class="lead p fs-4 fw-semibold">App easily adapts to any of your devices!
-                        </p>
-
-                    </div>
-               
+          </div>
         </div>
-        <footer class="footer">
-            <nav class="navbar  navbar-expand-sm navbar-dark bg-dark  ">
-                <div class="container-fluid">
-                    <a class="navbar-brand disabled" tabindex="-1" aria-disabled="true">Was made by KV-21 Ivan Voitenko</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" aria-current="page" href="https://t.me/ivanvt92"
-                                    target="_blank">Telegram</a>
-                            </li>
-                           
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </footer>
+      </nav>
+    </header>
+
+    <div class="content">
+      <!-- Весь твій оригінальний вміст тут без змін -->
+      <div class="info1 px-4 py-5  text-center bg-secondary bg-opacity-50 ">
+        <img
+          class=" d-block mx-auto mb-4"
+          src="task2.png"
+          alt=""
+          width="150"
+          height="150"
+        />
+        <h1 class="display-5 fw-bold text-body-emphasis">
+          Welcome to your personal contact book
+        </h1>
+        <p class="lead mb-4 fs-4 fw-semibold">
+          Make your contacts orginazed with Contact Book
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a
+            type="link"
+            href="create.html"
+            class="butt btn btn-dark  btn-lg px-4 gap-3"
+            >Let's Start!</a
+          >
+          <a
+            type="link"
+            href="registr.html"
+            class="btn btn-outline-light btn-lg px-4"
+            >Create Account!</a
+          >
+        </div>
+      </div>
+
+      <div class="px-4 py-5   text-center bg-secondary bg-opacity-50  ">
+        <div class="row flex-lg-row-reverse align-items-center g-5 px-5  ">
+          <div class="center">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+              You can easily manage your contacts!
+            </h1>
+            <p class="lead p fs-4 fw-semibold">
+              Add, edit and sort your contacts with Contact Book!
+            </p>
+            <div class="center">
+              <img
+                src="task3.png"
+                class="d-block mx-lg-auto img-fluid "
+                alt="Bootstrap Themes"
+                width="200"
+                height="200"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-4 py-5   text-center bg-secondary bg-opacity-50  ">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-0  ">
+          <div class="center">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+              Sort contacts by first letter!
+            </h1>
+            <p class="lead p fs-4 fw-semibold">
+              Orginize by sorting with first letter of last name! It will be so
+              easy to search!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-4 py-5   text-center bg-secondary bg-opacity-50  ">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-0  ">
+          <div class="center">
+            <img
+              src="task4.png"
+              class="d-block mx-lg-auto img-fluid "
+              alt="Bootstrap Themes"
+              width="200"
+              height="200"
+              loading="lazy"
+            />
+          </div>
+          <div class="center">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+              Flexibility and ease of use!
+            </h1>
+            <p class="lead p fs-4 fw-semibold">
+              App easily adapts to any of your devices!
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-	<script src="contacts.js"></script>
+    <footer class="footer">
+      <nav class="navbar  navbar-expand-sm navbar-dark bg-dark  ">
+        <div class="container-fluid">
+          <a
+            class="navbar-brand disabled"
+            tabindex="-1"
+            aria-disabled="true"
+            >Was made by KV-21 Ivan Voitenko</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="https://t.me/ivanvt92"
+                  target="_blank"
+                  >Telegram</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </footer>
+  </div>
+
+  <!-- Підключення bootstrap bundle (popper + js) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+  <!-- Ініціалізуємо Vue додаток -->
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          message: "Hello Vue!",
+        };
+      },
+      mounted() {
+        // axios.get(...) можна додати тут
+      },
+      methods: {},
+    }).mount("#app");
+  </script>
 </body>
 
 </html>

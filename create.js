@@ -1,33 +1,35 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('registrationForm');
-  const btnAdd = form.querySelector('button[type="button"]');
-
-  btnAdd.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    const surname = form.querySelector('#surname').value.trim();
-    const name = form.querySelector('#name').value.trim();
-    const phone = form.querySelector('#phone').value.trim();
+document.getElementById('addBtn').addEventListener('click', async () => {
+    const surname = document.getElementById('surname').value.trim();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
 
     if (!surname || !name || !phone) {
-      alert('Заполните все поля');
-      return;
+        alert('Пожалуйста, заполните все поля!');
+        return;
     }
 
-    let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+    const newContact = {
+        name: surname + ' ' + name,
+        number: phone
+    };
 
-    const newId = contacts.length ? Math.max(...contacts.map(c => c.id || 0)) + 1 : 1;
-    const fullName = `${surname} ${name}`.trim();
+    try {
+        const response = await fetch('http://localhost:3000/contacts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newContact)
+        });
 
-    contacts.push({ id: newId, name: fullName, number: phone });
-
-    console.log('Сохраняю контакты:', contacts);
-
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-
-    form.reset();
-    form.querySelector('#phone').value = '+380';
-
-    alert('Контакт добавлен');
-  });
+        if (response.ok) {
+            alert('Контакт успешно добавлен!');
+            document.getElementById('surname').value = '';
+            document.getElementById('name').value = '';
+            document.getElementById('phone').value = '+380';
+        } else {
+            alert('Ошибка при добавлении контакта');
+        }
+    } catch (error) {
+        alert('Не удалось подключиться к серверу');
+        console.error(error);
+    }
 });
